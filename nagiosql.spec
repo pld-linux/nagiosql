@@ -1,5 +1,7 @@
 # TODO:
-#	- install dir - subpackage? how about doc? sql? ENABLE_INSTALLER?
+# - install dir - subpackage? how about doc? sql? ENABLE_INSTALLER?
+# - -setup subpackage for install option?
+# - rename pkg with nagios prefix: nagios-ql? nagios-nagiosql?
 #
 %define		ver	302
 Summary:	Web based administration tool for Nagios
@@ -62,19 +64,13 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/nagios
 %triggerun -- apache < 2.2.0, apache-base
 %webapp_unregister httpd %{_webapp}
 
-if [ "$httpd_reload" ]; then
-	%service httpd reload
-fi
-if [ "$apache_reload" ]; then
-	%service apache reload
-fi
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
 %doc install/doc/*
+# XXX: %config?!
 %{_sysconfdir}/nagios/*
 %attr(770,root,http) %{_sysconfdir}/%{name}
 %dir %attr(750,root,http) %{_webconfdir}

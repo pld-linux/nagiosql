@@ -1,0 +1,11 @@
+--- nagiosql3/install/sql/nagiosQL_v3_db_mysql.sql.orig	2009-02-02 11:24:55.000000000 +0100
++++ nagiosql3/install/sql/nagiosQL_v3_db_mysql.sql	2009-03-16 22:40:45.000000000 +0100
+@@ -207,7 +207,7 @@
+ -- Daten für Tabelle `tbl_domain`
+ -- 
+ 
+-INSERT INTO `tbl_domain` (`id`, `domain`, `alias`, `server`, `method`, `user`, `password`, `basedir`, `hostconfig`, `serviceconfig`, `backupdir`, `hostbackup`, `servicebackup`, `nagiosbasedir`, `importdir`, `commandfile`, `binaryfile`, `pidfile`, `version`, `access_rights`, `active`, `nodelete`, `last_modified`) VALUES (1, 'localhost', 'Local installation', 'localhost', '1', '', '', '/etc/nagiosql/', '/etc/nagiosql/hosts/', '/etc/nagiosql/services/', '/etc/nagiosql/backup/', '/etc/nagiosql/backup/hosts/', '/etc/nagiosql/backup/services/', '/etc/nagios/', '/etc/nagios/import/', '/var/nagios/rw/nagios.cmd', '/usr/local/nagios/bin/nagios', '/var/nagios/nagios.lock', 3, '00000000', '1', '1', '2008-09-03 18:54:03');
++INSERT INTO `tbl_domain` (`id`, `domain`, `alias`, `server`, `method`, `user`, `password`, `basedir`, `hostconfig`, `serviceconfig`, `backupdir`, `hostbackup`, `servicebackup`, `nagiosbasedir`, `importdir`, `commandfile`, `binaryfile`, `pidfile`, `version`, `access_rights`, `active`, `nodelete`, `last_modified`) VALUES (1, 'localhost', 'Local installation', 'localhost', '1', '', '', '/etc/nagiosql/', '/etc/nagiosql/hosts/', '/etc/nagiosql/services/', '/etc/nagiosql/backup/', '/etc/nagiosql/backup/hosts/', '/etc/nagiosql/backup/services/', '/etc/nagios/', '/etc/nagios/import/', '/var/nagios/rw/nagios.cmd', '/usr/sbin/nagios', '/var/lib/nagios/nagios.pid', 3, '00000000', '1', '1', '2008-09-03 18:54:03');
+ 
+ -- --------------------------------------------------------
+ 

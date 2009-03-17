@@ -1,7 +1,5 @@
 # TODO:
 # - install dir - subpackage? how about doc? sql? ENABLE_INSTALLER?
-# - -setup subpackage for install option?
-# - rename pkg with nagios prefix: nagios-ql? nagios-nagiosql?
 #
 %define		ver	302
 Summary:	Web based administration tool for Nagios
@@ -70,7 +68,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc install/doc/*
-# XXX: %config?!
 %{_sysconfdir}/nagios/*
 %attr(2770,root,nagios-data) %{_sysconfdir}/%{name}
 %dir %attr(750,root,http) %{_webconfdir}

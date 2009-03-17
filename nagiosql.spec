@@ -72,7 +72,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc install/doc/*
 # XXX: %config?!
 %{_sysconfdir}/nagios/*
-%attr(770,root,http) %{_sysconfdir}/%{name}
+%attr(2770,root,nagios-data) %{_sysconfdir}/%{name}
 %dir %attr(750,root,http) %{_webconfdir}
 # g+w required for install-time database configuration only
 %dir %attr(1770,root,http) %config(noreplace) %verify(not md5 mtime size) %{_webconfdir}/config

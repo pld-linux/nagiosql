@@ -5,7 +5,7 @@
 Summary:	Web based administration tool for Nagios
 Name:		nagiosql
 Version:	3.0.2
-Release:	0.1
+Release:	1
 License:	BSD
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/nagiosql/%{name}%{ver}.tar.bz2
@@ -36,6 +36,7 @@ and local file or remote access to the Nagios configuration files.
 
 %prep
 %setup -q -n %{name}3
+sed -i -e 's,\r$,,' install/sql/nagiosQL_v3_db_mysql.sql
 %patch0 -p1
 
 %install

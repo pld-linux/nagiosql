@@ -1,15 +1,15 @@
 # TODO:
 # - install dir - subpackage? how about doc? sql? ENABLE_INSTALLER?
 #
-%define		ver	302
+%define		ver	303
 Summary:	Web based administration tool for Nagios
 Name:		nagiosql
-Version:	3.0.2
+Version:	3.0.3
 Release:	1
 License:	BSD
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/nagiosql/%{name}%{ver}.tar.bz2
-# Source0-md5:	274a3b46db8151a89f5a3b47c69171f6
+# Source0-md5:	110a9c6b408ef9d6172a9724a0eecb9b
 Source1:	%{name}-apache.conf
 Source2:	%{name}.cfg
 Patch0:		%{name}-paths.patch
@@ -77,6 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_webconfdir}/config/locale
 %lang(de) %{_webconfdir}/config/locale/de_DE
 %lang(en) %{_webconfdir}/config/locale/en_GB
+%lang(en) %{_webconfdir}/config/locale/es_ES
 %lang(fr) %{_webconfdir}/config/locale/fr_FR
 %lang(it) %{_webconfdir}/config/locale/it_IT
 %lang(pl) %{_webconfdir}/config/locale/pl_PL

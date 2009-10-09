@@ -17,6 +17,7 @@ URL:		http://www.nagiosql.org/
 Requires:	php(ftp)
 Requires:	php(gettext)
 Requires:	php(mysql)
+Requires:	php(xml)
 Requires:	php-pear-HTML_Template_IT
 Requires:	webapps
 Requires:	webserver(php) >= 4.3

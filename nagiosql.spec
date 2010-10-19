@@ -78,7 +78,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_webconfdir}/config/locale
 %lang(de) %{_webconfdir}/config/locale/de_DE
 %lang(en) %{_webconfdir}/config/locale/en_GB
-%lang(en) %{_webconfdir}/config/locale/es_ES
+%lang(es) %{_webconfdir}/config/locale/es_ES
 %lang(fr) %{_webconfdir}/config/locale/fr_FR
 %lang(it) %{_webconfdir}/config/locale/it_IT
 %lang(pl) %{_webconfdir}/config/locale/pl_PL

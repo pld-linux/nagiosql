@@ -1,15 +1,15 @@
 # TODO:
 # - install dir - subpackage? how about doc? sql? ENABLE_INSTALLER?
 #
-%define		ver	303
+%define		ver	304
 Summary:	Web based administration tool for Nagios
 Name:		nagiosql
-Version:	3.0.3
+Version:	3.0.4
 Release:	1
 License:	BSD
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/nagiosql/%{name}%{ver}.tar.bz2
-# Source0-md5:	110a9c6b408ef9d6172a9724a0eecb9b
+# Source0-md5:	32644a4ac38e94714d39af63456cb7a0
 Source1:	%{name}-apache.conf
 Source2:	%{name}.cfg
 Patch0:		%{name}-paths.patch
@@ -36,7 +36,8 @@ manage and use them. NagiosQL is based on a webserver with PHP, MySQL
 and local file or remote access to the Nagios configuration files.
 
 %prep
-%setup -q -n %{name}3
+%setup -q -c
+#-n %{name}
 sed -i -e 's,\r$,,' install/sql/nagiosQL_v3_db_mysql.sql
 %patch0 -p1
 

@@ -5,13 +5,14 @@
 Summary:	Web based administration tool for Nagios
 Name:		nagiosql
 Version:	3.0.4
-Release:	1
+Release:	2
 License:	BSD
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/nagiosql/%{name}%{ver}.tar.bz2
 # Source0-md5:	32644a4ac38e94714d39af63456cb7a0
 Source1:	%{name}-apache.conf
 Source2:	%{name}.cfg
+Source3:	%{name}-httpd.conf
 Patch0:		%{name}-paths.patch
 URL:		http://www.nagiosql.org/
 Requires:	php(ftp)
@@ -21,6 +22,7 @@ Requires:	php(xml)
 Requires:	php-pear-HTML_Template_IT
 Requires:	webapps
 Requires:	webserver(php) >= 4.3
+Conflicts:	apache-base < 2.4.0-1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -50,7 +52,7 @@ cp -a config $RPM_BUILD_ROOT%{_webconfdir}
 ln -sf %{_webconfdir}/config $RPM_BUILD_ROOT%{_appdir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_webconfdir}/apache.conf
-install %{SOURCE1} $RPM_BUILD_ROOT%{_webconfdir}/httpd.conf
+install %{SOURCE3} $RPM_BUILD_ROOT%{_webconfdir}/httpd.conf
 install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/nagios
 
 %triggerin -- apache1 < 1.3.37-3, apache1-base
@@ -59,10 +61,10 @@ install %{SOURCE2} $RPM_BUILD_ROOT%{_sysconfdir}/nagios
 %triggerun -- apache1 < 1.3.37-3, apache1-base
 %webapp_unregister apache %{_webapp}
 
-%triggerin -- apache < 2.2.0, apache-base
+%triggerin -- apache-base
 %webapp_register httpd %{_webapp}
 
-%triggerun -- apache < 2.2.0, apache-base
+%triggerun -- apache-base
 %webapp_unregister httpd %{_webapp}
 
 %clean

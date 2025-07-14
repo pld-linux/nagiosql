@@ -41,7 +41,7 @@ and local file or remote access to the Nagios configuration files.
 %setup -q -c
 #-n %{name}
 sed -i -e 's,\r$,,' install/sql/nagiosQL_v3_db_mysql.sql
-%patch0 -p1
+%patch -P0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT

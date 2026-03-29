@@ -5,7 +5,7 @@
 Summary:	Web based administration tool for Nagios
 Name:		nagiosql
 Version:	3.0.4
-Release:	2
+Release:	3
 License:	BSD
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/nagiosql/%{name}%{ver}.tar.bz2

@@ -5,7 +5,7 @@
 Summary:	Web based administration tool for Nagios
 Name:		nagiosql
 Version:	3.0.4
-Release:	3
+Release:	4
 License:	BSD
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/nagiosql/%{name}%{ver}.tar.bz2
@@ -25,6 +25,8 @@ Requires:	webserver(php) >= 4.3
 Conflicts:	apache-base < 2.4.0-1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_noautoreq_pear		\.\./.* .*_class.php functions/.*.php status.php supportive.php
 
 %define		_appdir		%{_datadir}/%{name}
 %define		_webapps	/etc/webapps

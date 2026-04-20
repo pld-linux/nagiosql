@@ -5,7 +5,7 @@
 Summary:	Web based administration tool for Nagios
 Name:		nagiosql
 Version:	3.0.4
-Release:	4
+Release:	5
 License:	BSD
 Group:		Networking/Utilities
 Source0:	http://dl.sourceforge.net/nagiosql/%{name}%{ver}.tar.bz2
@@ -76,7 +76,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc install/doc/*
 %{_sysconfdir}/nagios/*
-%attr(2770,root,nagios-data) %{_sysconfdir}/%{name}
+%attr(2770,root,nagcmd) %{_sysconfdir}/%{name}
 %dir %attr(750,root,http) %{_webconfdir}
 # g+w required for install-time database configuration only
 %dir %attr(1770,root,http) %config(noreplace) %verify(not md5 mtime size) %{_webconfdir}/config
